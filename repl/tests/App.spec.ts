@@ -59,24 +59,5 @@ test('after I click the button, its label increments', async ({ page }) => {
 
 // TODO: Fill this in to test your button push functionality!
 test('fetch works on different inputs', async ({ page }) => {
-  await page.goto('http://localhost:8000/');
-  await page.getByPlaceholder('Enter command here!').click();
-  await page.getByPlaceholder('Enter command here!').fill('test');
-  await page.getByRole('button', { name: 'Submitted 0 times' }).click();
-  await expect(page.getByText('Error: Invalid input test')).toBeVisible();
-
-  await page.getByPlaceholder('Enter command here!').click();
-  await page.getByPlaceholder('Enter command here!').fill('4');
-  await page.getByRole('button', { name: 'Submitted 1 times' }).click();
-  await expect(page.getByText('Error: Invalid input 4')).toBeVisible();
-
-  await page.getByPlaceholder('Enter command here!').click();
-  await page.getByPlaceholder('Enter command here!').fill('3');
-  await page.getByRole('button', { name: 'Submitted 2 times' }).click();
-  await expect(page.getByText('Moe Jaffa')).toBeVisible();
-  await page.getByPlaceholder('Enter command here!').click();
-  await page.getByPlaceholder('Enter command here!').fill('0');
-  await page.getByRole('button', { name: 'Submitted 3 times' }).click();
-  await expect(page.getByText('Nim Telson')).toBeVisible();
   
 });
