@@ -2,7 +2,7 @@ import * as http from 'http'
 import * as util from 'util'
 
 /**
- * This is a trivial example of a node.js backend that returns a constant value (17).
+ * This is a trivial example of a node.js backend that returns a JSON.
  * It is run by cd'ing to the repl directory and running `node src/backend/trivial_backend.js`
  * This should start the server on localhost:3232 (according to line 23)
  */

@@ -12,7 +12,6 @@ import { test, expect } from '@playwright/test';
 // If you needed to do something before every test case...
 test.beforeEach(() => {
     // ... you'd put it here.
-    // TODO: Is there something we need to do before every test case to avoid repeating code?
   })
 
 /**
@@ -43,13 +42,11 @@ test('after I type into the input box, its text changes', async ({ page }) => {
 });
 
 test('on page load, i see a button', async ({ page }) => {
-  // TODO WITH TA: Fill this in!
   await page.goto('http://localhost:8000/');
   await expect(page.getByRole('button')).toBeVisible()
 });
 
 test('after I click the button, its label increments', async ({ page }) => {
-  // TODO WITH TA: Fill this in to test your button counter functionality!
   await page.goto('http://localhost:8000/');
   await expect(page.getByRole('button', { name: 'Submitted 0 times'})).toBeVisible()
   await page.getByRole('button', { name: 'Submitted 0 times' }).click();

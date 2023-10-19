@@ -14,7 +14,7 @@ export function REPLInput(props : REPLInputProps) {
     const [commandString, setCommandString] = useState<string>('');
     const [count, setCount] = useState<number>(0)
 
-    // TODO: Make this return the index of the student from the list
+    // TODO: Make this return a student from the list based on the passed index.
     function handleSubmit() : void {
       setCount(count+1);
       if (commandString !== ''){
