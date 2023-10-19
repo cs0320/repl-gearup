@@ -1,35 +1,34 @@
-# Mock/Echo gearup materials
+# REPL gearup materials
 
-## Project code
+This is the codebase for the REPL gearup. It looks very similar to that of the Mock gearup with the addition of a trivial `backend`. Use this backend to receive fetch requests and return data asynchrnously to your REPL.
 
-The `mock` folder was created using our React app setup. It contains the app itself. 
+Unlike the previous sprint, you should not use this gearup as your starter code for this sprint. Instead, use your Mock implementation; this gearup is only used to illustrate the use of `fetch` requests.
+
+Your tasks can be found in the `REPLInput.tsx` and `App.spec.ts` files and are labeled with "TODO". First, make a fetch request that returns the student from the list of students based on the index passed in. Once this is done, right a test using Playwright to verify its functionality.
 
 ## Playwright tests
 
-The `testing` folder was created via `npm init playwright@latest`. It contains our Playwright example tests. We did not install a GH actions script; otherwise we used the defaults. 
-
-You can see the Playwright configuration in `playwright.config.ts`. This shouldn't be modified much; it's the default except that we:
-* modified the `webServer` parameter to start the gearup project so that Playwright can interact with it. Notice that when your tests run, the configuration will actually run them on multiple browsers: Chrome, Firefox, and Safari. If you need to speed up your tests during development, you can comment some of these out.
+Notice in the `playwright.config.ts` file, there is a small change to the webServer field. In addition to running the frontend, it also starts up the backend. If possible, this would be a nice addition to your own implementation if you can run your backend automatically in your tests.
 
 ## How to setup and run
 Once cloned:
 
-### Setup Mock from root directory
-`cd mock` — Change into the `mock` directory
+### Setup REPL from root directory
+`cd repl` — Change into the `repl` directory
 
 `npm install` — Installs node_modules folder for dependencies
 
-### Running Mock
-`npm run start` — This starts a local server that compiles your code in real time.
-
-### Setup and run Playwright from root directory
-`cd testing` — Change into the `testing` directory
-
-`npm install` — Installs node_modules folder for dependencies
-
 `npx install playwright` — Installs everything needed to run PlayWright
 
-### Running tests witih Playwright
+### Running Frontend
+`npm start` — This starts a local server at port 8000 that compiles your code in real time.
+
+### Running Backend
+`node src/backend/trivial_backend.js` — This starts a local server at port 3232 that mocks a very simple backend with one static JSON output. Once it is run, feel free to visit 'http://localhost:3232' to see what gets returned.
+
+*You may have to open multiple terminals to run the frontend and backend simultaneously*
+
+### Running tests with Playwright
 `npx playwright test` — Runs tests
 
 `npx playwright show-report` — Shows a code breakdown of test progressions
