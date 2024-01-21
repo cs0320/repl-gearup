@@ -1,6 +1,9 @@
-repl/node_modules/
-repl/src/*.js
+node_modules/
+*.js
 .DS_Store
-repl/test-results/
-repl/playwright-report/
-repl/playwright/.cache/
+test-results/
+playwright-report/
+playwright/.cache/
+target/
+build/
+dist/

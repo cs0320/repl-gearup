@@ -1,6 +1,6 @@
 # REPL gearup materials
 
-This is the codebase for the REPL gearup. It looks very similar to that of the Mock gearup with the addition of a trivial `backend`. Use this backend to receive fetch requests and return data asynchrnously to your REPL.
+This is the codebase for the REPL gearup. It looks very similar to that of the Mock gearup with the addition of a trivial `backend`. Use this backend to receive fetch requests and return data asynchronously to your REPL.
 
 Unlike the previous sprint, you should not use this gearup as your starter code for this sprint. Instead, use your Mock implementation; this gearup is only used to illustrate the use of `fetch` requests.
 
