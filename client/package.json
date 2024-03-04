@@ -1,20 +1,18 @@
 {
-  "name": "cs32-sprint4-gearup",
+  "name": "cs32-sprint3-gearup",
   "version": "22.2.0",
-  "description": "Brown CSCI0320 Sprint 4 Gearup for Spring 2024",
+  "description": "Brown CSCI0320 Sprint 3 Gearup for Fall 2023",
   "license": "UNLICENSED",
-  "type": "module",
-  "scripts": {
-    "start": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
-    "test:unit": "vitest run",
-    "test:e2e": "playwright test",
-    "test": "npm run test:unit && npm run test:e2e"
-  },
   "dependencies": {
+    "@types/node": "^16.11.36",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "dotenv": "^16.4.4",
+    "firebase": "^10.8.0",
+    "playwright": "^1.38.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "typescript": "^4.6.4"
   },
   "devDependencies": {
     "@playwright/test": "^1.39.0",
@@ -27,15 +25,27 @@
     "typescript": "^4.6.4",
     "vite": "^4.4.10",
     "vitest": "^1.2.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "cross-env": "^7.0.3"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "cross-env VITE_APP_NODE_ENV=test playwright test",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "testing-library/no-dom-import": "off"
+    }
   },
-  "prettier": {},
   "browserslist": {
     "production": [
       ">0.2%",

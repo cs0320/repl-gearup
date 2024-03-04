@@ -1,5 +1,5 @@
 node_modules/
-*.js
+client/*.js
 .DS_Store
 test-results/
 playwright-report/
@@ -7,3 +7,4 @@ playwright/.cache/
 target/
 build/
 dist/
+.env
