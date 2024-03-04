@@ -16,6 +16,6 @@
     "noEmit": false,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
-  "exclude": ["src/backend"]
+  "include": ["src", "../server/demo/trivial_backend.js"],
+  "exclude": ["src/backend"],
 }

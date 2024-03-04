@@ -1,5 +1,5 @@
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import '../styles/main.css';
-import { Dispatch, SetStateAction, useEffect, useState} from 'react';
 import { ControlledInput } from './ControlledInput';
 
 interface REPLInputProps{
