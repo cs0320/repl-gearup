@@ -13,7 +13,7 @@ const informativeJson = {
   "name" : "cs0320",
   "description" : "Coolest Software Engineering Class In the World",
   "rating" : "6/5",
-  "students" : ["Nim Telson", "Gam Sundotra", "Crace Ganterella", "Moe Jaffa"]
+  "students" : ["Nim Telson", "Gam Sundotra", "Brion Oloomfield", "Moe Jaffa"]
 }
 
 // This function is called when a request is made to the server, it returns the JSON above.

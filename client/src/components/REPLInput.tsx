@@ -17,8 +17,29 @@ export function REPLInput(props : REPLInputProps) {
     // TODO: Make this return a student from the list based on the passed index.
     function handleSubmit() : void {
       setCount(count+1);
-      props.setHistory(props.history.concat(commandString))
-      setCommandString('')
+      if (commandString !== ''){
+        setCommandString('')
+        fetch('http://localhost:3232')
+          .then(response => response.json())
+          .then(json => {
+            const students : [string] = json.students
+            let studentIndex : number = parseInt(commandString)
+            // Checks for invalid inputs,
+            if (Number.isNaN(studentIndex) || studentIndex < 0 || studentIndex >= students.length){
+              props.setHistory(props.history.concat("Error: Invalid input " + commandString))
+            }
+            else{
+              const name : string = students[studentIndex]
+              props.setHistory(props.history.concat(name))
+            }
+          })
+          .catch((error) => {
+            props.setHistory(props.history.concat("Error in fetch"))
+          })
+      }
+      else{
+        props.setHistory(props.history.concat("Error: Empty command"))
+      }
     }
     /**
      * We suggest breaking down this component into smaller components, think about the individual pieces 
